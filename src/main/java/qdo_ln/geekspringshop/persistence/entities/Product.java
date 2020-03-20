@@ -5,6 +5,7 @@ import qdo_ln.geekspringshop.persistence.entities.enums.ProductCategory;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -24,10 +25,11 @@ public class Product {
 
     private boolean available;
 
-    @OneToOne
-    @JoinColumn(name = "image")
-    private Image image;
+    @OneToMany(mappedBy = "product")
+    private List<Image> image;
 
     @Enumerated(EnumType.ORDINAL)
     private ProductCategory category;
+
+
 }

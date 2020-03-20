@@ -2,9 +2,7 @@ package qdo_ln.geekspringshop.persistence.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
@@ -16,6 +14,7 @@ public class Image {
 
     private String name;
 
-    @OneToOne(mappedBy = "image")
+    @ManyToOne
+    @JoinColumn(name = "id")
     private Product product;
 }

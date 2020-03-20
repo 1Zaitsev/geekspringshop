@@ -9,7 +9,11 @@
     </head>
     <body>
         <div class="container">
-            <h1>Product [[ ${product.title} ]]</h1>
+            <h1>Product </h1>
+            <img th:src="@{'/products/images/' + ${product.id}}" alt="" />
+            <p>Title: [[ ${product.title} ]]</p>
+            <p>Price: [[ ${product.price} ]]</p>
+            <p>Description: [[ ${product.description} ]]</p>
         </div>
     </body>
 </html>
